@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SFZ: Shehzad Fitness Zone | Unleash Your Potential</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Lobster&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <video id="bgVid" autoplay muted loop class="bg-video">
+    <source src="smoke2.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  
+  <script>
+    const bgVid = document.getElementById("bgVid");
+    bgVid.playbackRate = 0.75; // slow down smoke
+    bgVid.addEventListener("ended", () => {
+      console.log("Video ended — not looping!");
+    });
+  </script>
+  
+
+  <header class="header">
+    <div class="left">
+      <img src="dumbell.png" alt="Dumbbell Logo" />
+      <div class="gym-name">Shehzad <span class="highlight">Fitness Zone</span></div>
+    </div>
+    <nav class="mid">
+      <ul class="navbar">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Fitness Calculator</a></li>
+      </ul>
+    </nav>
+    <div class="right">
+      <button class="btn" onclick="alert('Call us at: +91-9876543210')">Call Us Now</button>
+      <button class="btn" onclick="alert('Email us at: shehzadfitness@gmail.com')">Email Us</button>
+    </div>
+  </header>
+
+  <div class="cont">
+    <h1>JOIN THE BEST GYM IN PUNJAB</h1>
+    <form id="joinForm">
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Enter Your Name" required />
+        <input type="number" name="age" placeholder="Enter Your Age" required />
+        <input type="text" name="gender" placeholder="Enter Your Gender" required />
+        <input type="text" name="locality" placeholder="Enter Your Locality" required />
+        <input type="tel" name="phone" placeholder="Enter Your Phone No" required />
+        <input type="email" name="email" placeholder="Enter Your Email ID" required />
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>

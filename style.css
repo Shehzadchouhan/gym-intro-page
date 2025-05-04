@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1; /* behind all content */
+  opacity: 0.35; /* adjust transparency for subtlety */
+  pointer-events: none; /* so it doesn’t block buttons or links */
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('gym.jpg') no-repeat center center fixed; 
+  background-size: cover;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+.gym-name, h1, .navbar a {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.gym-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FFFFFF; /* White color for gym name */
+}
+
+.highlight {
+  color: #FFFFFF; /* Light color for emphasis */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(0, 0, 0, 0.8); /* Dark header background */
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.left img {
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 50px;
+}
+
+.left div {
+  font-size: 1.5rem;
+  color: #FFFFFF; /* White color for header text */
+}
+
+.navbar {
+  display: flex;
+  gap: 50px; /* Adjust the gap between the navbar items */
+  list-style: none;
+  background-color: white;
+  padding: 17px;
+  width: 604px;
+  border-radius: 40px;
+  justify-content: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black; /* White color for links */
+  font-weight: bold;
+  font-size: 22px;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #5b5b5b; /* Light grey on hover */
+  border-bottom: 2px solid #3d3d3d; /* Light grey underline */
+}
+
+.right .btn {
+  margin-left: 10px;
+  padding: 10px 15px;
+  background-color: #333333; /* Dark grey for buttons */
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.right .btn:hover {
+  background-color: #555555; /* Lighter grey on hover */
+}
+
+.cont {
+  max-width: 600px;
+  margin: 50px auto;
+  background: rgba(0, 0, 0, 0.7); /* Dark background for form */
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.cont h1 {
+  margin-bottom: 20px;
+  color: #FFFFFF; /* White text for headings */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input {
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #D3D3D3; /* Light grey border */
+  background-color: #333333; /* Dark grey background */
+  color: #FFFFFF; /* White text */
+  font-size: 1rem;
+}
+
+.form-group button {
+  margin-top: 15px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: white; /* Medium grey for submit button */
+  color: black;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-group button:hover {
+  background-color: #dfdcdc; /* Lighter grey on hover */
+}
+
+@media (max-width: 768px) {
+  .header {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .navbar {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  }
+
+  .right {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+}
