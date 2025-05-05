@@ -1,169 +1,209 @@
-* {
+/* General Body and HTML Styling */
+body, html {
+  background: url('assets/gym.jpg') no-repeat -245px 23px; /* Center the background image */
+  background-size: cover; /* Ensure the image covers the full viewport */
+  background-color: #000;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  height: 100%; /* Ensure the body takes up full height */
+  position: relative; /* Establish stacking context for z-index */
 }
+
+/* Background Video Styling */
 .bg-video {
   position: fixed;
   top: 0;
   left: 0;
-  min-width: 100%;
-  min-height: 100%;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
-  z-index: -1; /* behind all content */
-  opacity: 0.35; /* adjust transparency for subtlety */
-  pointer-events: none; /* so it doesn’t block buttons or links */
-}
-body {
-  font-family: 'Poppins', sans-serif;
-  background: url('assets/gym.jpg') no-repeat center center fixed; 
-  background-size: cover;
-  color: white;
-  scroll-behavior: smooth;
+  z-index: -1; /* Ensure video stays behind all content */
+  opacity: 0.2; /* Optional: adjust opacity if needed */
 }
 
-.gym-name, h1, .navbar a {
-  font-family: 'Bebas Neue', sans-serif;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
 
-.gym-name {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #FFFFFF; /* White color for gym name */
-}
-
-.highlight {
-  color: #FFFFFF; /* Light color for emphasis */
-}
-
+/* Header Styling */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  background: rgba(0, 0, 0, 0.8); /* Dark header background */
+  background-color: rgba(0, 0, 0, 0.85);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .left {
   display: flex;
   align-items: center;
+  gap: 10px; /* spacing between image and name */
+  padding-top: 22px;
 }
 
 .left img {
-  height: 50px;
-  margin-right: 10px;
-  border-radius: 50px;
+  height: 35px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 50%; /* makes image circular */
+  border: 2px solid #fff; /* white border around image */
 }
 
-.left div {
-  font-size: 1.5rem;
-  color: #FFFFFF; /* White color for header text */
+.gym-name {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.highlight {
+  color: #fcd303;
 }
 
 .navbar {
-  display: flex;
-  gap: 50px; /* Adjust the gap between the navbar items */
   list-style: none;
-  background-color: white;
-  padding: 17px;
-  width: 604px;
-  border-radius: 40px;
-  justify-content: center;
+  display: flex;
+  gap: 20px;
 }
 
-.navbar a {
+.navbar li a {
   text-decoration: none;
-  color: black; /* White color for links */
-  font-weight: bold;
-  font-size: 22px;
-  transition: color 0.3s, border-bottom 0.3s;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-.navbar a:hover,
-.navbar a.active {
-  color: #5b5b5b; /* Light grey on hover */
-  border-bottom: 2px solid #3d3d3d; /* Light grey underline */
+.navbar li a:hover {
+  color: #fcd303;
 }
 
 .right .btn {
   margin-left: 10px;
   padding: 10px 15px;
-  background-color: #333333; /* Dark grey for buttons */
+  background-color: #fff;
+  color: #000;
   border: none;
-  color: white;
-  font-weight: bold;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background-color 0.3s;
 }
 
 .right .btn:hover {
-  background-color: #555555; /* Lighter grey on hover */
+  background-color: #ddd;
 }
 
+/* Home Form Section */
 .cont {
-  max-width: 600px;
-  margin: 50px auto;
-  background: rgba(0, 0, 0, 0.7); /* Dark background for form */
-  padding: 30px;
-  border-radius: 12px;
   text-align: center;
+  margin: 100px auto;
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 700px;
 }
 
 .cont h1 {
+  font-size: 2rem;
   margin-bottom: 20px;
-  color: #FFFFFF; /* White text for headings */
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 
-.form-group input {
-  margin: 10px 0;
+.form-group input, .form-group button {
   padding: 12px;
-  border-radius: 5px;
-  border: 1px solid #D3D3D3; /* Light grey border */
-  background-color: #333333; /* Dark grey background */
-  color: #FFFFFF; /* White text */
   font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #333;
+  color: white;
 }
 
 .form-group button {
-  margin-top: 15px;
-  padding: 12px;
-  font-size: 1rem;
+  background-color: #fff;
+  color: #000;
   font-weight: bold;
-  background-color: white; /* Medium grey for submit button */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-group button:hover {
+  background-color: #ddd;
+}
+
+/* About, Contact, Calculator Shared Styles */
+section {
+  margin: 80px auto;
+  padding: 40px;
+  max-width: 800px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+/* Contact and Calculator Forms */
+.contact-form, .calculator-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.calculator-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+}
+
+.contact-form button,
+.calculator-form button {
+  padding: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: white;
   color: black;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
-.form-group button:hover {
-  background-color: #dfdcdc; /* Lighter grey on hover */
+.contact-form button:hover,
+.calculator-form button:hover {
+  background-color: #ddd;
 }
 
-@media (max-width: 768px) {
-  .header {
-      flex-direction: column;
-      gap: 10px;
-  }
-
-  .navbar {
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-  }
-
-  .right {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-  }
+.result {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #fcd303;
 }
+
+/* Styling the <hr> to make it look like a clean separation line */
+.separator {
+  border: none;
+  border-top: 2px solid #fff;
+  margin: 20px 0;
+  width: 100%; /* Adjust width as per requirement */
+  margin-left: auto;
+  margin-right: auto; /* Centers the line */
+}
+

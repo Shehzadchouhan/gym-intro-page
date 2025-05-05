@@ -4,29 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SFZ: Shehzad Fitness Zone | Unleash Your Potential</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Lobster&family=Noto+Sans+JP&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <!-- Background Video -->
   <video id="bgVid" autoplay muted loop class="bg-video">
     <source src="assets/smoke2.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
-  
-  <script>
-    const bgVid = document.getElementById("bgVid");
-    bgVid.playbackRate = 0.75; // slow down smoke
-    bgVid.addEventListener("ended", () => {
-      console.log("Video ended — not looping!");
-    });
-  </script>
-  
 
+  <!-- Header Section -->
   <header class="header">
     <div class="left">
       <img src="assets/dumbell.png" alt="Dumbbell Logo" />
@@ -34,34 +24,74 @@
     </div>
     <nav class="mid">
       <ul class="navbar">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Contact us</a></li>
-        <li><a href="#">Fitness Calculator</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#calculator">BMI Calculator</a></li>
       </ul>
     </nav>
     <div class="right">
-      <button class="btn" onclick="alert('Call us at: +91-9876543210')">Call Us Now</button>
+      <button class="btn" onclick="alert('Call us at: +91-9876543210')">Call Us</button>
       <button class="btn" onclick="alert('Email us at: shehzadfitness@gmail.com')">Email Us</button>
     </div>
   </header>
 
-  <div class="cont">
+  <!-- Home Section -->
+  <section class="cont" id="home">
     <h1>JOIN THE BEST GYM IN PUNJAB</h1>
-    <form id="joinForm">
-      <div class="form-group">
-        <input type="text" name="name" placeholder="Enter Your Name" required />
-        <input type="number" name="age" placeholder="Enter Your Age" required />
-        <input type="text" name="gender" placeholder="Enter Your Gender" required />
-        <input type="text" name="locality" placeholder="Enter Your Locality" required />
-        <input type="tel" name="phone" placeholder="Enter Your Phone No" required />
-        <input type="email" name="email" placeholder="Enter Your Email ID" required />
-        <button type="submit">Submit</button>
-      </div>
+    <form id="joinForm" class="form-group">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="number" name="age" placeholder="Your Age" required min="18" />
+      <select name="gender" required>
+        <option value="" disabled selected>Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <input type="text" name="locality" placeholder="Locality" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9]{10}" />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <button type="submit">Submit</button>
     </form>
-  </div>
+  </section>
 
+  <hr class="separator">
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Shehzad Fitness Zone</h2>
+    <p>
+      Welcome to Shehzad Fitness Zone — your ultimate destination for health, strength, and confidence. Whether you're a beginner or a pro, our gym provides the right environment, equipment, and support to help you transform your lifestyle.
+    </p>
+  </section>
+
+  <hr class="separator">
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <hr class="separator">
+
+  <!-- Fitness Calculator Section -->
+  <section id="calculator">
+    <h2>Fitness Calculator (BMI)</h2>
+    <form id="bmiForm">
+      <input type="number" id="weight" placeholder="Enter weight in kg">
+      <input type="number" id="height" placeholder="Enter height in cm">
+      <button type="submit" id="calculateBMI">Calculate BMI</button>
+    </form>
+    <p id="bmi-result"></p>
+    <div class="result" id="bmi-result"></div>
+  </section>
+
+  <!-- Link to the JavaScript file -->
   <script src="script.js"></script>
-  
 </body>
 </html>
