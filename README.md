@@ -6,9 +6,10 @@ A simple and responsive landing page for a Gym/Fitness Center using HTML and CSS
 👉 [Click here to visit the live site](https://gymsitegearup.netlify.app/?)
 
 ##Screenshots-
-#### 🏠 Home Page
+#### Home Page
 ![Home Page](./assets/home.png)
-
+#### About Page
+![about Page](./assets/abt.png)
 ## 📌 Features
 - Fully responsive layout
 - Hero section with background image
